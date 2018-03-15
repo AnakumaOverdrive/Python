@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ggzy.assetsmanage.mapper.CrmServerroomMapper">
+	<resultMap id="BaseResultMap" type="com.ggzy.assetsmanage.pojo.CrmServerroom">
+		<id column="ROOMID" property="roomid" jdbcType="VARCHAR" />
+		<result column="ROOMID" property="roomid" jdbcType="VARCHAR" />
+		<result column="ROOMNAME" property="roomname" jdbcType="VARCHAR" />
+		<result column="ROOMLOCATION" property="roomlocation" jdbcType="VARCHAR" />
+		<result column="CREATEDATE" property="createdate" jdbcType="TIMESTAMP" />
+		<result column="CREATEUSERID" property="createuserid" jdbcType="VARCHAR" />
+		<result column="MODIFYDATE" property="modifydate" jdbcType="TIMESTAMP" />
+		<result column="MODIFYUSERID" property="modifyuserid" jdbcType="VARCHAR" />
+		<result column="ROOMTYPE" property="roomtype" jdbcType="VARCHAR" />
+		<result column="ISDELETE" property="isdelete" jdbcType="INTEGER" />
+		<result column="DATAOF3D" property="dataof3d" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		ROOMID, ROOMNAME, ROOMLOCATION, CREATEDATE, CREATEUSERID, MODIFYDATE, MODIFYUSERID, ROOMTYPE, ISDELETE, DATAOF3D
+	</sql>
+</mapper>

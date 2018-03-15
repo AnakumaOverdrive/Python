@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ggzy.assetsmanage.mapper.CrmStorageroomMapper">
+	<resultMap id="BaseResultMap" type="com.ggzy.assetsmanage.pojo.CrmStorageroom">
+		<id column="STORAGEROOMID" property="storageroomid" jdbcType="VARCHAR" />
+		<result column="STORAGEROOMID" property="storageroomid" jdbcType="VARCHAR" />
+		<result column="STORAGEROOMNAME" property="storageroomname" jdbcType="VARCHAR" />
+		<result column="STORAGEROOMPOSITION" property="storageroomposition" jdbcType="VARCHAR" />
+		<result column="ISDELETE" property="isdelete" jdbcType="INTEGER" />
+		<result column="CREATEUSERID" property="createuserid" jdbcType="VARCHAR" />
+		<result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="MODIFYUSERID" property="modifyuserid" jdbcType="VARCHAR" />
+		<result column="MODIFYTIME" property="modifytime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<resultMap id="BaseResultMap" type="com.ggzy.assetsmanage.pojo.CrmStorageroom">
+		<id column="STORAGEROOMID" property="storageroomid" jdbcType="VARCHAR" />
+		<result column="STORAGEROOMID" property="storageroomid" jdbcType="VARCHAR" />
+		<result column="STORAGEROOMNAME" property="storageroomname" jdbcType="VARCHAR" />
+		<result column="STORAGEROOMPOSITION" property="storageroomposition" jdbcType="VARCHAR" />
+		<result column="ISDELETE" property="isdelete" jdbcType="INTEGER" />
+		<result column="CREATEUSERID" property="createuserid" jdbcType="VARCHAR" />
+		<result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="MODIFYUSERID" property="modifyuserid" jdbcType="VARCHAR" />
+		<result column="MODIFYTIME" property="modifytime" jdbcType="TIMESTAMP" />
+	</resultMap>
+</mapper>

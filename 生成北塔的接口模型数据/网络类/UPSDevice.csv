@@ -1,0 +1,26 @@
+﻿,基本信息,,,uuid,静态属性,uuid,,
+,基本信息,,,domain,静态属性,domain,,
+KPI-UPS-ALL-1,基本信息,,,中文名称,静态属性,name,,
+KPI-UPS-ALL-2,基本信息,,,管理IP,静态属性,ip,,
+KPI-UPS-ALL-3,基本信息,,,厂商,静态属性,manufacturer,,
+KPI-UPS-ALL-4,基本信息,,,设备名称,静态属性,deviceName,,
+KPI-UPS-ALL-5,基本信息,,,系统OID,静态属性,systemOID,,
+KPI-UPS-ALL-22,基本信息,,,管理等级,静态属性,grade,,
+,运行信息,输入信息,InputInfo,InputLine（key）,静态属性,InputLine,,
+KPI-UPS-ALL-6,运行信息,输入信息,InputInfo,输入频率,指标,InputFrequency,,
+KPI-UPS-ALL-7,运行信息,输入信息,InputInfo,输入电压,指标,InputVoltage,,
+KPI-UPS-ALL-8,运行信息,输入信息,InputInfo,输入功率,指标,InputFrequency,,
+KPI-UPS-ALL-9,运行信息,输入信息,InputInfo,输入电流,指标,InputElectricity,,
+KPI-UPS-ALL-10,运行信息,,,功率负载,指标,PowerLoad,%,
+KPI-UPS-ALL-11,运行信息,,,电池状态,指标,Status,,返回值：/batteryAlarm/batteryDischarging/batteryDepleted/highQuantity/batteryNormal/noUnit/batteryError/batteryLow/unknown
+KPI-UPS-ALL-12,运行信息,,,电池容量,指标,Capacity,%,
+KPI-UPS-ALL-13,运行信息,,,电池可持续时间,指标,RuntimeRemaining,分钟,
+KPI-UPS-ALL-14,运行信息,,,温度,指标,Temperature,度,
+,运行信息,输出信息,OutputInfo,OutputLine（key）,静态属性,OutputLine,,
+KPI-UPS-ALL-15,运行信息,输出信息,OutputInfo,输出频率,指标,OutputFrequency,,
+KPI-UPS-ALL-16,运行信息,输出信息,OutputInfo,输出电压,指标,OutputVoltage,,
+KPI-UPS-ALL-23,运行信息,输出信息,OutputInfo,输出电流,指标,OutputElectricity,,
+KPI-UPS-ALL-24,运行信息,输出信息,OutputInfo,输出功率,指标,OutputPower,,
+KPI-UPS-ALL-17,管理信息,,,PING状态,指标,PingStatus, ,返回值：ON/OFF(ON：通OFF：不通)
+KPI-UPS-ALL-18,管理信息,,,SNMP访问状态,指标,SNMPStatus, ,"返回值：NO/RO/RW(
+NO：不可读 不可写RO：只读RW：可读、可写)"

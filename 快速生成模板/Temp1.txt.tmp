@@ -1,0 +1,14 @@
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('%(Name)s','%(Desc)s')
+GO
+
+//生成伪代码示例
+private String _%(Name)s;
+/// <summary>
+/// %(Desc)s
+/// </summary>
+public String %(Name)s {
+	get { return _%(Name)s; }
+	set { value = '%(Desc)s'; }
+};
+

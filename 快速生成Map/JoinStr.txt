@@ -1,0 +1,7 @@
+CodeID	
+Flag	
+Code_Order	
+Code	
+Meaning	
+Is_Enable	
+Remark	

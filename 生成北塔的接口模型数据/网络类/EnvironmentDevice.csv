@@ -1,0 +1,13 @@
+﻿,基本信息,,,uuid,静态属性,uuid,,
+,基本信息,,,domain,静态属性,domain,,
+KPI-probe-ALL-1,基本信息,,,中文名称,静态属性,name,,
+KPI-probe-ALL-2,基本信息,,,管理IP,静态属性,ip,,
+KPI-probe-ALL-3,基本信息,,,厂商,静态属性,manufacturer,,
+KPI-probe-ALL-4,基本信息,,,设备名称,静态属性,deviceName,,
+KPI-probe-ALL-11,运维信息,,,管理等级,静态属性,grade,,
+KPI-probe-ALL-5,运行信息,,,温度,指标,Temperature,度,
+KPI-probe-ALL-6,运行信息,,,湿度,指标,Humidity,%,
+KPI-probe-ALL-7,管理信息,,,SNMP访问状态,指标,SNMPStatus, ,"返回值：NO/RO/RW
+NO：不可读 不可写
+RO：只读
+RW：可读、可写"

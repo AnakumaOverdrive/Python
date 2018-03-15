@@ -1,0 +1,110 @@
+string sysname = GetParaValue(dic, "Sysname");
+if (string.IsNullOrEmpty(sysname))
+{
+	return DecryptReturnObj("-1", "", "参数 申请系统名称(Sysname) 为必填项");
+}
+string linkname = GetParaValue(dic, "Linkname");
+if (string.IsNullOrEmpty(linkname))
+{
+	return DecryptReturnObj("-1", "", "参数 联系人(Linkname) 为必填项");
+}
+string linkcompany = GetParaValue(dic, "Linkcompany");
+if (string.IsNullOrEmpty(linkcompany))
+{
+	return DecryptReturnObj("-1", "", "参数 联系人单位(Linkcompany) 为必填项");
+}
+string linkdepart = GetParaValue(dic, "Linkdepart");
+if (string.IsNullOrEmpty(linkdepart))
+{
+	return DecryptReturnObj("-1", "", "参数 联系人部门(Linkdepart) 为必填项");
+}
+string linkjob = GetParaValue(dic, "Linkjob");
+if (string.IsNullOrEmpty(linkjob))
+{
+	return DecryptReturnObj("-1", "", "参数 联系人职务(Linkjob) 为必填项");
+}
+string linktel = GetParaValue(dic, "Linktel");
+if (string.IsNullOrEmpty(linktel))
+{
+	return DecryptReturnObj("-1", "", "参数 联系人电话(Linktel) 为必填项");
+}
+string linkemail = GetParaValue(dic, "Linkemail");
+if (string.IsNullOrEmpty(linkemail))
+{
+	return DecryptReturnObj("-1", "", "参数 联系人邮箱(Linkemail) 为必填项");
+}
+string inchargename = GetParaValue(dic, "Inchargename");
+if (string.IsNullOrEmpty(inchargename))
+{
+	return DecryptReturnObj("-1", "", "参数 负责人(Inchargename) 为必填项");
+}
+string inchargedepart = GetParaValue(dic, "Inchargedepart");
+if (string.IsNullOrEmpty(inchargedepart))
+{
+	return DecryptReturnObj("-1", "", "参数 负责人部门(Inchargedepart) 为必填项");
+}
+string inchargejob = GetParaValue(dic, "Inchargejob");
+if (string.IsNullOrEmpty(inchargejob))
+{
+	return DecryptReturnObj("-1", "", "参数 负责人职务(Inchargejob) 为必填项");
+}
+string inchargetel = GetParaValue(dic, "Inchargetel");
+if (string.IsNullOrEmpty(inchargetel))
+{
+	return DecryptReturnObj("-1", "", "参数 负责人电话(Inchargetel) 为必填项");
+}
+string inchargeemail = GetParaValue(dic, "Inchargeemail");
+if (string.IsNullOrEmpty(inchargeemail))
+{
+	return DecryptReturnObj("-1", "", "参数 负责人邮箱(Inchargeemail) 为必填项");
+}
+string situationdescribe = GetParaValue(dic, "Situationdescribe");
+if (string.IsNullOrEmpty(situationdescribe))
+{
+	return DecryptReturnObj("-1", "", "参数 情况说明(Situationdescribe) 为必填项");
+}
+string cabinetspace = GetParaValue(dic, "Cabinetspace");
+if (string.IsNullOrEmpty(cabinetspace))
+{
+	return DecryptReturnObj("-1", "", "参数 机柜空间(Cabinetspace) 为必填项");
+}
+string bandwidth = GetParaValue(dic, "Bandwidth");
+if (string.IsNullOrEmpty(bandwidth))
+{
+	return DecryptReturnObj("-1", "", "参数 政务专网带宽(Bandwidth) 为必填项");
+}
+string publicipnumber = GetParaValue(dic, "Publicipnumber");
+if (string.IsNullOrEmpty(publicipnumber))
+{
+	return DecryptReturnObj("-1", "", "参数 公网带IP数(Publicipnumber) 为必填项");
+}
+string applyUserId = GetParaValue(dic, "ApplyUserId");
+if (string.IsNullOrEmpty(applyUserId))
+{
+	return DecryptReturnObj("-1", "", "参数 申请用户ID(ApplyUserId) 为必填项");
+}
+string applyUserDeparId = GetParaValue(dic, "ApplyUserDeparId");
+if (string.IsNullOrEmpty(applyUserDeparId))
+{
+	return DecryptReturnObj("-1", "", "参数 申请用户部门ID(ApplyUserDeparId) 为必填项");
+}
+var entity = new XXXXXX();
+entity.Sysname = GetParaValue(dic, "Sysname"); //申请系统名称
+entity.Linkname = GetParaValue(dic, "Linkname"); //联系人
+entity.Linkcompany = GetParaValue(dic, "Linkcompany"); //联系人单位
+entity.Linkdepart = GetParaValue(dic, "Linkdepart"); //联系人部门
+entity.Linkjob = GetParaValue(dic, "Linkjob"); //联系人职务
+entity.Linktel = GetParaValue(dic, "Linktel"); //联系人电话
+entity.Linkemail = GetParaValue(dic, "Linkemail"); //联系人邮箱
+entity.Inchargename = GetParaValue(dic, "Inchargename"); //负责人
+entity.Inchargedepart = GetParaValue(dic, "Inchargedepart"); //负责人部门
+entity.Inchargejob = GetParaValue(dic, "Inchargejob"); //负责人职务
+entity.Inchargetel = GetParaValue(dic, "Inchargetel"); //负责人电话
+entity.Inchargeemail = GetParaValue(dic, "Inchargeemail"); //负责人邮箱
+entity.Situationdescribe = GetParaValue(dic, "Situationdescribe"); //情况说明
+entity.Cabinetspace = GetParaValue(dic, "Cabinetspace"); //机柜空间
+entity.Bandwidth = GetParaValue(dic, "Bandwidth"); //政务专网带宽
+entity.Publicipnumber = GetParaValue(dic, "Publicipnumber"); //公网带IP数
+entity.ApplyUserId = GetParaValue(dic, "ApplyUserId"); //申请用户ID
+entity.ApplyUserDeparId = GetParaValue(dic, "ApplyUserDeparId"); //申请用户部门ID
+

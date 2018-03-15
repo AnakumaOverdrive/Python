@@ -1,0 +1,117 @@
+String codeid,String flag,String code_order,String code,String meaning,String is_enable,String remark,
+
+
+mapParam.put("codeid", codeid);// 
+mapParam.put("flag", flag);// 
+mapParam.put("code_order", code_order);// 
+mapParam.put("code", code);// 
+mapParam.put("meaning", meaning);// 
+mapParam.put("is_enable", is_enable);// 
+mapParam.put("remark", remark);// 
+mapParam.put("_isPageView", page !=0 && limit !=0);// 是否分页
+mapParam.put("_begin", (page - 1) * limit + 1);// 起始行
+mapParam.put("_end", page * limit);// 结束行
+
+
+codeid:'',// 
+flag:'',// 
+code_order:'',// 
+code:'',// 
+meaning:'',// 
+is_enable:'',// 
+remark:'',// 
+
+
+
+<select id="selectXXXXXXXXX" resultType="java.util.Map"	parameterType="java.util.Map">
+<if test="_isPageView==true and _begin != null and _begin != '' and _end != null and _end != '' or _begin == 0 or _end == 0">
+	select * from (SELECT *,ROW_NUMBER() OVER(ORDER BY orderbyID DESC) AS
+	AllowPagingId
+	FROM ( select *, 1 as orderbyID from (
+</if>
+//SQL SELECT
+<where>
+<!---->
+<if test="codeid != null and codeid != ''">
+	 and codeid = #{codeid}
+</if>
+<!---->
+<if test="flag != null and flag != ''">
+	 and flag = #{flag}
+</if>
+<!---->
+<if test="code_order != null and code_order != ''">
+	 and code_order = #{code_order}
+</if>
+<!---->
+<if test="code != null and code != ''">
+	 and code = #{code}
+</if>
+<!---->
+<if test="meaning != null and meaning != ''">
+	 and meaning = #{meaning}
+</if>
+<!---->
+<if test="is_enable != null and is_enable != ''">
+	 and is_enable = #{is_enable}
+</if>
+<!---->
+<if test="remark != null and remark != ''">
+	 and remark = #{remark}
+</if>
+</where>
+<if test="_isPageView == true and _begin != null and _begin != '' and _end != null and _end != ''  or _begin == 0 or _end ==0">
+	) as t1 ) as t2 ) as t3 where AllowPagingId between #{_begin}
+	and #{_end}
+</if>
+</select>
+
+
+
+var table = layui.table;
+table.render({
+	elem : '#Datagrid',
+	cellMinWidth : 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+	cols :[[{
+	field : 'codeid',
+	width : 80,
+	title : ',
+	sort : true'
+}
+{
+	field : 'flag',
+	width : 80,
+	title : ',
+	sort : true'
+}
+{
+	field : 'code_order',
+	width : 80,
+	title : ',
+	sort : true'
+}
+{
+	field : 'code',
+	width : 80,
+	title : ',
+	sort : true'
+}
+{
+	field : 'meaning',
+	width : 80,
+	title : ',
+	sort : true'
+}
+{
+	field : 'is_enable',
+	width : 80,
+	title : ',
+	sort : true'
+}
+{
+	field : 'remark',
+	width : 80,
+	title : ',
+	sort : true'
+}]]
+	

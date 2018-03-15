@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ggzy.assetsmanage.mapper.CrmHardwareconfigurationMapper">
+	<resultMap id="BaseResultMap" type="com.ggzy.assetsmanage.pojo.CrmHardwareconfiguration">
+		<id column="HARDWAREID" property="hardwareid" jdbcType="VARCHAR" />
+		<result column="HARDWAREID" property="hardwareid" jdbcType="VARCHAR" />
+		<result column="HARDWARENO" property="hardwareno" jdbcType="VARCHAR" />
+		<result column="HARDWAREKIND" property="hardwarekind" jdbcType="VARCHAR" />
+		<result column="HARDWARENAME" property="hardwarename" jdbcType="VARCHAR" />
+		<result column="BRAND" property="brand" jdbcType="VARCHAR" />
+		<result column="MODULEANDTYPE" property="moduleandtype" jdbcType="VARCHAR" />
+		<result column="PLACEOFORIGIN" property="placeoforigin" jdbcType="VARCHAR" />
+		<result column="MANUFACTURER" property="manufacturer" jdbcType="VARCHAR" />
+		<result column="QRCODE" property="qrcode" jdbcType="VARCHAR" />
+		<result column="TECHNICALPARAMETERS" property="technicalparameters" jdbcType="VARCHAR" />
+		<result column="STATE" property="state" jdbcType="VARCHAR" />
+		<result column="HEALTHSTATE" property="healthstate" jdbcType="VARCHAR" />
+		<result column="GUARANTEETO" property="guaranteeto" jdbcType="TIMESTAMP" />
+		<result column="SERVERROOMID" property="serverroomid" jdbcType="VARCHAR" />
+		<result column="CABINETID" property="cabinetid" jdbcType="VARCHAR" />
+		<result column="POSTIONOFUSTART" property="postionofustart" jdbcType="INTEGER" />
+		<result column="STORAGEROOMID" property="storageroomid" jdbcType="VARCHAR" />
+		<result column="PROCUREMENTCONTRACTID" property="procurementcontractid" jdbcType="VARCHAR" />
+		<result column="SUPPLYORDERID" property="supplyorderid" jdbcType="VARCHAR" />
+		<result column="CREATEUSERID" property="createuserid" jdbcType="VARCHAR" />
+		<result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="MODIFYUSERID" property="modifyuserid" jdbcType="VARCHAR" />
+		<result column="MODIFYTIME" property="modifytime" jdbcType="TIMESTAMP" />
+		<result column="GUARANTEESPAN" property="guaranteespan" jdbcType="INTEGER" />
+		<result column="POSTIONOFUEND" property="postionofuend" jdbcType="INTEGER" />
+		<result column="ISDELETE" property="isdelete" jdbcType="INTEGER" />
+		<result column="DEVICEFOR" property="devicefor" jdbcType="VARCHAR" />
+		<result column="CLOUDID" property="cloudid" jdbcType="VARCHAR" />
+		<result column="TYPEOF3D" property="typeof3d" jdbcType="VARCHAR" />
+		<result column="MANAGEUSERNAME" property="manageusername" jdbcType="VARCHAR" />
+		<result column="MANAGEPASSWORD" property="managepassword" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		HARDWAREID, HARDWARENO, HARDWAREKIND, HARDWARENAME, BRAND, MODULEANDTYPE, PLACEOFORIGIN, MANUFACTURER, QRCODE, TECHNICALPARAMETERS, STATE, HEALTHSTATE, GUARANTEETO, SERVERROOMID, CABINETID, POSTIONOFUSTART, STORAGEROOMID, PROCUREMENTCONTRACTID, SUPPLYORDERID, CREATEUSERID, CREATETIME, MODIFYUSERID, MODIFYTIME, GUARANTEESPAN, POSTIONOFUEND, ISDELETE, DEVICEFOR, CLOUDID, TYPEOF3D, MANAGEUSERNAME, MANAGEPASSWORD
+	</sql>
+	<insert id="insert" parameterType="com.ggzy.assetsmanage.pojo.CrmHardwareconfiguration">
+<selectKey resultType="java.lang.String" keyProperty="hardwareid" order="BEFORE">
+select newid()
+</selectKey>
+		insert into T_CRM_HardwareConfiguration
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="hardwareid != null and hardwareid != ''">
+					HARDWAREID,
+			</if>
+			<if test="hardwareno != null and hardwareno != ''">
+					HARDWARENO,
+			</if>
+			<if test="hardwarekind != null and hardwarekind != ''">
+					HARDWAREKIND,
+			</if>
+			<if test="hardwarename != null and hardwarename != ''">
+					HARDWARENAME,
+			</if>
+			<if test="brand != null and brand != ''">
+					BRAND,
+			</if>
+			<if test="moduleandtype != null and moduleandtype != ''">
+					MODULEANDTYPE,
+			</if>
+			<if test="placeoforigin != null and placeoforigin != ''">
+					PLACEOFORIGIN,
+			</if>
+			<if test="manufacturer != null and manufacturer != ''">
+					MANUFACTURER,
+			</if>
+			<if test="qrcode != null and qrcode != ''">
+					QRCODE,
+			</if>
+			<if test="technicalparameters != null and technicalparameters != ''">
+					TECHNICALPARAMETERS,
+			</if>
+			<if test="state != null and state != ''">
+					STATE,
+			</if>
+			<if test="healthstate != null and healthstate != ''">
+					HEALTHSTATE,
+			</if>
+			<if test="guaranteeto != null and guaranteeto != ''">
+					GUARANTEETO,
+			</if>
+			<if test="serverroomid != null and serverroomid != ''">
+					SERVERROOMID,
+			</if>
+			<if test="cabinetid != null and cabinetid != ''">
+					CABINETID,
+			</if>
+			<if test="postionofustart != null and postionofustart != ''">
+					POSTIONOFUSTART,
+			</if>
+			<if test="storageroomid != null and storageroomid != ''">
+					STORAGEROOMID,
+			</if>
+			<if test="procurementcontractid != null and procurementcontractid != ''">
+					PROCUREMENTCONTRACTID,
+			</if>
+			<if test="supplyorderid != null and supplyorderid != ''">
+					SUPPLYORDERID,
+			</if>
+			<if test="createuserid != null and createuserid != ''">
+					CREATEUSERID,
+			</if>
+			<if test="createtime != null and createtime != ''">
+					CREATETIME,
+			</if>
+			<if test="modifyuserid != null and modifyuserid != ''">
+					MODIFYUSERID,
+			</if>
+			<if test="modifytime != null and modifytime != ''">
+					MODIFYTIME,
+			</if>
+			<if test="guaranteespan != null and guaranteespan != ''">
+					GUARANTEESPAN,
+			</if>
+			<if test="postionofuend != null and postionofuend != ''">
+					POSTIONOFUEND,
+			</if>
+			<if test="isdelete != null and isdelete != ''">
+					ISDELETE,
+			</if>
+			<if test="devicefor != null and devicefor != ''">
+					DEVICEFOR,
+			</if>
+			<if test="cloudid != null and cloudid != ''">
+					CLOUDID,
+			</if>
+			<if test="typeof3d != null and typeof3d != ''">
+					TYPEOF3D,
+			</if>
+			<if test="manageusername != null and manageusername != ''">
+					MANAGEUSERNAME,
+			</if>
+			<if test="managepassword != null and managepassword != ''">
+					MANAGEPASSWORD,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="hardwareid != null and hardwareid != ''">
+				 	#{hardwareid},
+			</if>
+			<if test="hardwareno != null and hardwareno != ''">
+				 	#{hardwareno},
+			</if>
+			<if test="hardwarekind != null and hardwarekind != ''">
+				 	#{hardwarekind},
+			</if>
+			<if test="hardwarename != null and hardwarename != ''">
+				 	#{hardwarename},
+			</if>
+			<if test="brand != null and brand != ''">
+				 	#{brand},
+			</if>
+			<if test="moduleandtype != null and moduleandtype != ''">
+				 	#{moduleandtype},
+			</if>
+			<if test="placeoforigin != null and placeoforigin != ''">
+				 	#{placeoforigin},
+			</if>
+			<if test="manufacturer != null and manufacturer != ''">
+				 	#{manufacturer},
+			</if>
+			<if test="qrcode != null and qrcode != ''">
+				 	#{qrcode},
+			</if>
+			<if test="technicalparameters != null and technicalparameters != ''">
+				 	#{technicalparameters},
+			</if>
+			<if test="state != null and state != ''">
+				 	#{state},
+			</if>
+			<if test="healthstate != null and healthstate != ''">
+				 	#{healthstate},
+			</if>
+			<if test="guaranteeto != null and guaranteeto != ''">
+				 	#{guaranteeto},
+			</if>
+			<if test="serverroomid != null and serverroomid != ''">
+				 	#{serverroomid},
+			</if>
+			<if test="cabinetid != null and cabinetid != ''">
+				 	#{cabinetid},
+			</if>
+			<if test="postionofustart != null and postionofustart != ''">
+				 	#{postionofustart},
+			</if>
+			<if test="storageroomid != null and storageroomid != ''">
+				 	#{storageroomid},
+			</if>
+			<if test="procurementcontractid != null and procurementcontractid != ''">
+				 	#{procurementcontractid},
+			</if>
+			<if test="supplyorderid != null and supplyorderid != ''">
+				 	#{supplyorderid},
+			</if>
+			<if test="createuserid != null and createuserid != ''">
+				 	#{createuserid},
+			</if>
+			<if test="createtime != null and createtime != ''">
+				 	#{createtime},
+			</if>
+			<if test="modifyuserid != null and modifyuserid != ''">
+				 	#{modifyuserid},
+			</if>
+			<if test="modifytime != null and modifytime != ''">
+				 	#{modifytime},
+			</if>
+			<if test="guaranteespan != null and guaranteespan != ''">
+				 	#{guaranteespan},
+			</if>
+			<if test="postionofuend != null and postionofuend != ''">
+				 	#{postionofuend},
+			</if>
+			<if test="isdelete != null and isdelete != ''">
+				 	#{isdelete},
+			</if>
+			<if test="devicefor != null and devicefor != ''">
+				 	#{devicefor},
+			</if>
+			<if test="cloudid != null and cloudid != ''">
+				 	#{cloudid},
+			</if>
+			<if test="typeof3d != null and typeof3d != ''">
+				 	#{typeof3d},
+			</if>
+			<if test="manageusername != null and manageusername != ''">
+				 	#{manageusername},
+			</if>
+			<if test="managepassword != null and managepassword != ''">
+				 	#{managepassword},
+			</if>
+		</trim>
+	</insert>
+	<delete id="delete" parameterType="java.lang.String">
+		delete from
+		T_CRM_HardwareConfiguration
+		where HARDWAREID
+		= #{hardwareid}
+	</delete>
+	<delete id="deleteAll" parameterType="java.util.List">
+		delete from
+		T_CRM_HardwareConfiguration
+		where HARDWAREID in 
+		<foreach collection="list" item="hardwareid" open="(" separator=","
+		close=")">
+		#{hardwareid}
+		</foreach>
+	</delete>
+	<update id="update" parameterType="com.ggzy.assetsmanage.pojo.CrmHardwareconfiguration">
+		update T_CRM_HardwareConfiguration
+		<set>
+			<if test="hardwareid != null and hardwareid != ''">
+				 	HARDWAREID = #{hardwareid},
+			</if>
+			<if test="hardwareno != null and hardwareno != ''">
+				 	HARDWARENO = #{hardwareno},
+			</if>
+			<if test="hardwarekind != null and hardwarekind != ''">
+				 	HARDWAREKIND = #{hardwarekind},
+			</if>
+			<if test="hardwarename != null and hardwarename != ''">
+				 	HARDWARENAME = #{hardwarename},
+			</if>
+			<if test="brand != null and brand != ''">
+				 	BRAND = #{brand},
+			</if>
+			<if test="moduleandtype != null and moduleandtype != ''">
+				 	MODULEANDTYPE = #{moduleandtype},
+			</if>
+			<if test="placeoforigin != null and placeoforigin != ''">
+				 	PLACEOFORIGIN = #{placeoforigin},
+			</if>
+			<if test="manufacturer != null and manufacturer != ''">
+				 	MANUFACTURER = #{manufacturer},
+			</if>
+			<if test="qrcode != null and qrcode != ''">
+				 	QRCODE = #{qrcode},
+			</if>
+			<if test="technicalparameters != null and technicalparameters != ''">
+				 	TECHNICALPARAMETERS = #{technicalparameters},
+			</if>
+			<if test="state != null and state != ''">
+				 	STATE = #{state},
+			</if>
+			<if test="healthstate != null and healthstate != ''">
+				 	HEALTHSTATE = #{healthstate},
+			</if>
+			<if test="guaranteeto != null and guaranteeto != ''">
+				 	GUARANTEETO = #{guaranteeto},
+			</if>
+			<if test="serverroomid != null and serverroomid != ''">
+				 	SERVERROOMID = #{serverroomid},
+			</if>
+			<if test="cabinetid != null and cabinetid != ''">
+				 	CABINETID = #{cabinetid},
+			</if>
+			<if test="postionofustart != null and postionofustart != ''">
+				 	POSTIONOFUSTART = #{postionofustart},
+			</if>
+			<if test="storageroomid != null and storageroomid != ''">
+				 	STORAGEROOMID = #{storageroomid},
+			</if>
+			<if test="procurementcontractid != null and procurementcontractid != ''">
+				 	PROCUREMENTCONTRACTID = #{procurementcontractid},
+			</if>
+			<if test="supplyorderid != null and supplyorderid != ''">
+				 	SUPPLYORDERID = #{supplyorderid},
+			</if>
+			<if test="createuserid != null and createuserid != ''">
+				 	CREATEUSERID = #{createuserid},
+			</if>
+			<if test="createtime != null and createtime != ''">
+				 	CREATETIME = #{createtime},
+			</if>
+			<if test="modifyuserid != null and modifyuserid != ''">
+				 	MODIFYUSERID = #{modifyuserid},
+			</if>
+			<if test="modifytime != null and modifytime != ''">
+				 	MODIFYTIME = #{modifytime},
+			</if>
+			<if test="guaranteespan != null and guaranteespan != ''">
+				 	GUARANTEESPAN = #{guaranteespan},
+			</if>
+			<if test="postionofuend != null and postionofuend != ''">
+				 	POSTIONOFUEND = #{postionofuend},
+			</if>
+			<if test="isdelete != null and isdelete != ''">
+				 	ISDELETE = #{isdelete},
+			</if>
+			<if test="devicefor != null and devicefor != ''">
+				 	DEVICEFOR = #{devicefor},
+			</if>
+			<if test="cloudid != null and cloudid != ''">
+				 	CLOUDID = #{cloudid},
+			</if>
+			<if test="typeof3d != null and typeof3d != ''">
+				 	TYPEOF3D = #{typeof3d},
+			</if>
+			<if test="manageusername != null and manageusername != ''">
+				 	MANAGEUSERNAME = #{manageusername},
+			</if>
+			<if test="managepassword != null and managepassword != ''">
+				 	MANAGEPASSWORD = #{managepassword},
+			</if>
+		</set>
+		where HARDWAREID = #{hardwareid}
+	</update>
+	<select id="selectByID" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from T_CRM_HardwareConfiguration
+		where HARDWAREID = #{hardwareid}
+	</select>
+	<select id="select" resultMap="BaseResultMap" parameterType="com.esint.common.query.GenericQueryParam">
+		select
+		<include refid="Base_Column_List" />
+		from T_CRM_HardwareConfiguration
+		<where>
+			1 = 1
+			<if test="hardwareid != null and hardwareid != ''">
+				 and HARDWAREID = #{hardwareid}
+			</if>
+			<if test="hardwareno != null and hardwareno != ''">
+				 and HARDWARENO = #{hardwareno}
+			</if>
+			<if test="hardwarekind != null and hardwarekind != ''">
+				 and HARDWAREKIND = #{hardwarekind}
+			</if>
+			<if test="hardwarename != null and hardwarename != ''">
+				 and HARDWARENAME = #{hardwarename}
+			</if>
+			<if test="brand != null and brand != ''">
+				 and BRAND = #{brand}
+			</if>
+			<if test="moduleandtype != null and moduleandtype != ''">
+				 and MODULEANDTYPE = #{moduleandtype}
+			</if>
+			<if test="placeoforigin != null and placeoforigin != ''">
+				 and PLACEOFORIGIN = #{placeoforigin}
+			</if>
+			<if test="manufacturer != null and manufacturer != ''">
+				 and MANUFACTURER = #{manufacturer}
+			</if>
+			<if test="qrcode != null and qrcode != ''">
+				 and QRCODE = #{qrcode}
+			</if>
+			<if test="technicalparameters != null and technicalparameters != ''">
+				 and TECHNICALPARAMETERS = #{technicalparameters}
+			</if>
+			<if test="state != null and state != ''">
+				 and STATE = #{state}
+			</if>
+			<if test="healthstate != null and healthstate != ''">
+				 and HEALTHSTATE = #{healthstate}
+			</if>
+			<if test="guaranteeto != null and guaranteeto != ''">
+				 and GUARANTEETO = #{guaranteeto}
+			</if>
+			<if test="serverroomid != null and serverroomid != ''">
+				 and SERVERROOMID = #{serverroomid}
+			</if>
+			<if test="cabinetid != null and cabinetid != ''">
+				 and CABINETID = #{cabinetid}
+			</if>
+			<if test="postionofustart != null and postionofustart != ''">
+				 and POSTIONOFUSTART = #{postionofustart}
+			</if>
+			<if test="storageroomid != null and storageroomid != ''">
+				 and STORAGEROOMID = #{storageroomid}
+			</if>
+			<if test="procurementcontractid != null and procurementcontractid != ''">
+				 and PROCUREMENTCONTRACTID = #{procurementcontractid}
+			</if>
+			<if test="supplyorderid != null and supplyorderid != ''">
+				 and SUPPLYORDERID = #{supplyorderid}
+			</if>
+			<if test="createuserid != null and createuserid != ''">
+				 and CREATEUSERID = #{createuserid}
+			</if>
+			<if test="createtime != null and createtime != ''">
+				 and CREATETIME = #{createtime}
+			</if>
+			<if test="modifyuserid != null and modifyuserid != ''">
+				 and MODIFYUSERID = #{modifyuserid}
+			</if>
+			<if test="modifytime != null and modifytime != ''">
+				 and MODIFYTIME = #{modifytime}
+			</if>
+			<if test="guaranteespan != null and guaranteespan != ''">
+				 and GUARANTEESPAN = #{guaranteespan}
+			</if>
+			<if test="postionofuend != null and postionofuend != ''">
+				 and POSTIONOFUEND = #{postionofuend}
+			</if>
+			<if test="isdelete != null and isdelete != ''">
+				 and ISDELETE = #{isdelete}
+			</if>
+			<if test="devicefor != null and devicefor != ''">
+				 and DEVICEFOR = #{devicefor}
+			</if>
+			<if test="cloudid != null and cloudid != ''">
+				 and CLOUDID = #{cloudid}
+			</if>
+			<if test="typeof3d != null and typeof3d != ''">
+				 and TYPEOF3D = #{typeof3d}
+			</if>
+			<if test="manageusername != null and manageusername != ''">
+				 and MANAGEUSERNAME = #{manageusername}
+			</if>
+			<if test="managepassword != null and managepassword != ''">
+				 and MANAGEPASSWORD = #{managepassword}
+			</if>
+		<if test="_parameter.getSortParam().size() != 0">
+			order by
+			<foreach collection="_parameter.getSortParam()" item="sortParam"
+				separator=",">
+				${sortParam.column} ${sortParam.order}
+			</foreach>
+		</if>
+		</where>
+	</select>
+	<select id="selectPaging" resultMap="BaseResultMap" parameterType="com.esint.common.query.GenericQueryParam">
+		select
+		<include refid="Base_Column_List" />
+		from T_CRM_HardwareConfiguration
+		<where>
+			1 = 1
+			<if test="hardwareid != null and hardwareid != ''">
+				 and HARDWAREID = #{hardwareid}
+			</if>
+			<if test="hardwareno != null and hardwareno != ''">
+				 and HARDWARENO = #{hardwareno}
+			</if>
+			<if test="hardwarekind != null and hardwarekind != ''">
+				 and HARDWAREKIND = #{hardwarekind}
+			</if>
+			<if test="hardwarename != null and hardwarename != ''">
+				 and HARDWARENAME = #{hardwarename}
+			</if>
+			<if test="brand != null and brand != ''">
+				 and BRAND = #{brand}
+			</if>
+			<if test="moduleandtype != null and moduleandtype != ''">
+				 and MODULEANDTYPE = #{moduleandtype}
+			</if>
+			<if test="placeoforigin != null and placeoforigin != ''">
+				 and PLACEOFORIGIN = #{placeoforigin}
+			</if>
+			<if test="manufacturer != null and manufacturer != ''">
+				 and MANUFACTURER = #{manufacturer}
+			</if>
+			<if test="qrcode != null and qrcode != ''">
+				 and QRCODE = #{qrcode}
+			</if>
+			<if test="technicalparameters != null and technicalparameters != ''">
+				 and TECHNICALPARAMETERS = #{technicalparameters}
+			</if>
+			<if test="state != null and state != ''">
+				 and STATE = #{state}
+			</if>
+			<if test="healthstate != null and healthstate != ''">
+				 and HEALTHSTATE = #{healthstate}
+			</if>
+			<if test="guaranteeto != null and guaranteeto != ''">
+				 and GUARANTEETO = #{guaranteeto}
+			</if>
+			<if test="serverroomid != null and serverroomid != ''">
+				 and SERVERROOMID = #{serverroomid}
+			</if>
+			<if test="cabinetid != null and cabinetid != ''">
+				 and CABINETID = #{cabinetid}
+			</if>
+			<if test="postionofustart != null and postionofustart != ''">
+				 and POSTIONOFUSTART = #{postionofustart}
+			</if>
+			<if test="storageroomid != null and storageroomid != ''">
+				 and STORAGEROOMID = #{storageroomid}
+			</if>
+			<if test="procurementcontractid != null and procurementcontractid != ''">
+				 and PROCUREMENTCONTRACTID = #{procurementcontractid}
+			</if>
+			<if test="supplyorderid != null and supplyorderid != ''">
+				 and SUPPLYORDERID = #{supplyorderid}
+			</if>
+			<if test="createuserid != null and createuserid != ''">
+				 and CREATEUSERID = #{createuserid}
+			</if>
+			<if test="createtime != null and createtime != ''">
+				 and CREATETIME = #{createtime}
+			</if>
+			<if test="modifyuserid != null and modifyuserid != ''">
+				 and MODIFYUSERID = #{modifyuserid}
+			</if>
+			<if test="modifytime != null and modifytime != ''">
+				 and MODIFYTIME = #{modifytime}
+			</if>
+			<if test="guaranteespan != null and guaranteespan != ''">
+				 and GUARANTEESPAN = #{guaranteespan}
+			</if>
+			<if test="postionofuend != null and postionofuend != ''">
+				 and POSTIONOFUEND = #{postionofuend}
+			</if>
+			<if test="isdelete != null and isdelete != ''">
+				 and ISDELETE = #{isdelete}
+			</if>
+			<if test="devicefor != null and devicefor != ''">
+				 and DEVICEFOR = #{devicefor}
+			</if>
+			<if test="cloudid != null and cloudid != ''">
+				 and CLOUDID = #{cloudid}
+			</if>
+			<if test="typeof3d != null and typeof3d != ''">
+				 and TYPEOF3D = #{typeof3d}
+			</if>
+			<if test="manageusername != null and manageusername != ''">
+				 and MANAGEUSERNAME = #{manageusername}
+			</if>
+			<if test="managepassword != null and managepassword != ''">
+				 and MANAGEPASSWORD = #{managepassword}
+			</if>
+		</where>
+		<if test="_parameter.getSortParam().size() != 0">
+			order by
+			<foreach collection="_parameter.getSortParam()" item="sortParam"
+				separator=",">
+				${sortParam.column} ${sortParam.order}
+			</foreach>
+		</if>
+		offset (#{_begin} - 1) row fetch next #{_pagesize} rows only
+	</select>
+	<select id="selectCount" resultType="java.lang.Integer"	parameterType="com.esint.common.query.GenericQueryParam">
+		select count(1) from T_CRM_HardwareConfiguration
+		<where>
+			1 = 1
+			<if test="hardwareid != null and hardwareid != ''">
+				 and HARDWAREID = #{hardwareid}
+			</if>
+			<if test="hardwareno != null and hardwareno != ''">
+				 and HARDWARENO = #{hardwareno}
+			</if>
+			<if test="hardwarekind != null and hardwarekind != ''">
+				 and HARDWAREKIND = #{hardwarekind}
+			</if>
+			<if test="hardwarename != null and hardwarename != ''">
+				 and HARDWARENAME = #{hardwarename}
+			</if>
+			<if test="brand != null and brand != ''">
+				 and BRAND = #{brand}
+			</if>
+			<if test="moduleandtype != null and moduleandtype != ''">
+				 and MODULEANDTYPE = #{moduleandtype}
+			</if>
+			<if test="placeoforigin != null and placeoforigin != ''">
+				 and PLACEOFORIGIN = #{placeoforigin}
+			</if>
+			<if test="manufacturer != null and manufacturer != ''">
+				 and MANUFACTURER = #{manufacturer}
+			</if>
+			<if test="qrcode != null and qrcode != ''">
+				 and QRCODE = #{qrcode}
+			</if>
+			<if test="technicalparameters != null and technicalparameters != ''">
+				 and TECHNICALPARAMETERS = #{technicalparameters}
+			</if>
+			<if test="state != null and state != ''">
+				 and STATE = #{state}
+			</if>
+			<if test="healthstate != null and healthstate != ''">
+				 and HEALTHSTATE = #{healthstate}
+			</if>
+			<if test="guaranteeto != null and guaranteeto != ''">
+				 and GUARANTEETO = #{guaranteeto}
+			</if>
+			<if test="serverroomid != null and serverroomid != ''">
+				 and SERVERROOMID = #{serverroomid}
+			</if>
+			<if test="cabinetid != null and cabinetid != ''">
+				 and CABINETID = #{cabinetid}
+			</if>
+			<if test="postionofustart != null and postionofustart != ''">
+				 and POSTIONOFUSTART = #{postionofustart}
+			</if>
+			<if test="storageroomid != null and storageroomid != ''">
+				 and STORAGEROOMID = #{storageroomid}
+			</if>
+			<if test="procurementcontractid != null and procurementcontractid != ''">
+				 and PROCUREMENTCONTRACTID = #{procurementcontractid}
+			</if>
+			<if test="supplyorderid != null and supplyorderid != ''">
+				 and SUPPLYORDERID = #{supplyorderid}
+			</if>
+			<if test="createuserid != null and createuserid != ''">
+				 and CREATEUSERID = #{createuserid}
+			</if>
+			<if test="createtime != null and createtime != ''">
+				 and CREATETIME = #{createtime}
+			</if>
+			<if test="modifyuserid != null and modifyuserid != ''">
+				 and MODIFYUSERID = #{modifyuserid}
+			</if>
+			<if test="modifytime != null and modifytime != ''">
+				 and MODIFYTIME = #{modifytime}
+			</if>
+			<if test="guaranteespan != null and guaranteespan != ''">
+				 and GUARANTEESPAN = #{guaranteespan}
+			</if>
+			<if test="postionofuend != null and postionofuend != ''">
+				 and POSTIONOFUEND = #{postionofuend}
+			</if>
+			<if test="isdelete != null and isdelete != ''">
+				 and ISDELETE = #{isdelete}
+			</if>
+			<if test="devicefor != null and devicefor != ''">
+				 and DEVICEFOR = #{devicefor}
+			</if>
+			<if test="cloudid != null and cloudid != ''">
+				 and CLOUDID = #{cloudid}
+			</if>
+			<if test="typeof3d != null and typeof3d != ''">
+				 and TYPEOF3D = #{typeof3d}
+			</if>
+			<if test="manageusername != null and manageusername != ''">
+				 and MANAGEUSERNAME = #{manageusername}
+			</if>
+			<if test="managepassword != null and managepassword != ''">
+				 and MANAGEPASSWORD = #{managepassword}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 扩展方法 开始 -->
+	<!-- 获取硬件列表信息 -->
+	<select id="selectHardwarePageTable" resultType="java.util.Map" parameterType="java.util.Map">
+		select * from 
+			(
+				select a.*,
+				(case when a.State=1 then (c.StorageRoomName) else (b.RoomName + d.CabinetNo + CAST(a.PostionOfUStart as varchar) + 'U~' + CAST(a.PostionOfUEnd as varchar) + 'U') end) as Address, --所在地
+				(case when isnull(datediff(DAY,(select GETDATE()),a.GuaranteeTo),'')> 30 then '1' 
+					when  isnull(datediff(DAY,(select GETDATE()),a.GuaranteeTo),'')> 0 then '2'
+					else '3'
+					end) as GuaranteeTozt,--保质期状态 1:正常 2:临近 3:过保
+				b.RoomName,--机房名称
+				b.RoomType, --机房类型
+				d.CabinetNo, --机柜编号,
+				d.UCount, --机柜U数量
+				c.StorageRoomName,--库房名称
+				c.StorageRoomPosition,
+				e.Meaning as HardwareKindMeaning, --资产类型名称
+				f.Meaning as StateMeaning --资产状态解释
+				from T_CRM_HardwareConfiguration a
+				left join T_CRM_ServerRoom b on a.ServerRoomId = b.RoomId
+				left join T_CRM_StorageRoom c on a.StorageRoomId = c.StorageRoomId
+				left join T_CRM_Cabinet d on a.CabinetId = d.CabinetId
+				left join T_CRM_Code e on a.HardwareKind = e.Code and e.Flag ='10071'and e.Is_Enable=1
+				left join T_CRM_Code f on a.State = f.Code and f.Flag ='10021'and e.Is_Enable=1
+			) y
+		<where>
+		<if test="Search != null and Search != ''">
+			and (charindex(#{Search},y.HardwareNo,1)>0  or charindex(#{Search},y.Brand,1)>0 or charindex(#{Search},y.ModuleAndType,1)>0 or charindex(#{Search},y.HardwareName,1)>0)
+		</if>
+		<if test="HardwareNo != null and HardwareNo != ''">
+			and charindex(#{HardwareNo},y.HardwareNo,1)>0
+		</if>
+		<if test="Brand != null and Brand != ''">
+			and charindex(#{Brand},y.Brand,1)>0
+		</if>
+		<if test="ModuleAndType != null and ModuleAndType != ''">
+			and charindex(#{ModuleAndType},y.ModuleAndType,1)>0
+		</if>
+		<if test="HardwareName != null and HardwareName != ''">
+			and charindex(#{HardwareName},y.HardwareName,1)>0
+		</if>
+		<if test="Address != null and Address != ''">
+			and charindex(#{Address},y.Address,1)>0
+		</if>
+		<if test="ProcurementContractId != null and ProcurementContractId != ''">
+			and y.ProcurementContractId=#{ProcurementContractId}
+		</if>
+		<if test="HardwareKind != null and HardwareKind != ''">
+			and y.HardwareKind=#{HardwareKind}
+		</if>
+		<if test="State != null and State != ''">
+			and y.State=#{State}
+		</if>
+		<if test="HealthState != null and HealthState != ''">
+			and y.HealthState=#{HealthState}
+		</if>
+		<if test="IsTieCode != null and IsTieCode != ''">
+			and (case when y.QRCode IS null or y.QRCode='' then '2' else '1' end)=#{IsTieCode}
+		</if>
+		<if test="IsHaveParts != null and IsHaveParts != ''">
+			and (case when select COUNT(*) from T_CRM_Parts p where p.HardwareId=y.HardwareId)=0 then '2' else '1' end)=#{IsHaveParts}
+		</if>
+		<if test="SignDateStart != null and SignDateStart != ''">
+			and y.ProcurementContractId in(select ProcurementContractId from T_CRM_ProcurementContract where SignDate>=#{SignDateStart})
+		</if>
+		<if test="SignDateEnd != null and SignDateEnd != ''">
+			and y.ProcurementContractId in(select ProcurementContractId from T_CRM_ProcurementContract where #{SignDateEnd} >= SignDate)
+		</if>
+		<if test="GuaranteeTo != null and GuaranteeTo != ''">
+			and y.GuaranteeTozt=#{GuaranteeTo}
+		</if>
+		<if test="RoomType != null and RoomType != ''">
+			and y.State='2' and y.RoomType=#{RoomType}
+		</if>
+		<if test="ip != null and ip != ''">
+			and y.CabinetId = @CabinetId 
+		</if>
+		</where>
+	</select>
+<select id="selectCount" resultType="java.lang.Integer"	parameterType="com.esint.common.query.GenericQueryParam">
+		select count(1) from T_CRM_HardwareConfiguration
+		<where>
+			1 = 1
+			<if test="hardwareid != null and hardwareid != ''">
+				 and HARDWAREID = #{hardwareid}
+			</if>
+			<if test="hardwareno != null and hardwareno != ''">
+				 and HARDWARENO = #{hardwareno}
+			</if>
+			<if test="hardwarekind != null and hardwarekind != ''">
+				 and HARDWAREKIND = #{hardwarekind}
+			</if>
+			<if test="hardwarename != null and hardwarename != ''">
+				 and HARDWARENAME = #{hardwarename}
+			</if>
+			<if test="brand != null and brand != ''">
+				 and BRAND = #{brand}
+			</if>
+			<if test="moduleandtype != null and moduleandtype != ''">
+				 and MODULEANDTYPE = #{moduleandtype}
+			</if>
+			<if test="placeoforigin != null and placeoforigin != ''">
+				 and PLACEOFORIGIN = #{placeoforigin}
+			</if>
+			<if test="manufacturer != null and manufacturer != ''">
+				 and MANUFACTURER = #{manufacturer}
+			</if>
+			<if test="qrcode != null and qrcode != ''">
+				 and QRCODE = #{qrcode}
+			</if>
+			<if test="technicalparameters != null and technicalparameters != ''">
+				 and TECHNICALPARAMETERS = #{technicalparameters}
+			</if>
+			<if test="state != null and state != ''">
+				 and STATE = #{state}
+			</if>
+			<if test="healthstate != null and healthstate != ''">
+				 and HEALTHSTATE = #{healthstate}
+			</if>
+			<if test="guaranteeto != null and guaranteeto != ''">
+				 and GUARANTEETO = #{guaranteeto}
+			</if>
+			<if test="serverroomid != null and serverroomid != ''">
+				 and SERVERROOMID = #{serverroomid}
+			</if>
+			<if test="cabinetid != null and cabinetid != ''">
+				 and CABINETID = #{cabinetid}
+			</if>
+			<if test="postionofustart != null and postionofustart != ''">
+				 and POSTIONOFUSTART = #{postionofustart}
+			</if>
+			<if test="storageroomid != null and storageroomid != ''">
+				 and STORAGEROOMID = #{storageroomid}
+			</if>
+			<if test="procurementcontractid != null and procurementcontractid != ''">
+				 and PROCUREMENTCONTRACTID = #{procurementcontractid}
+			</if>
+			<if test="supplyorderid != null and supplyorderid != ''">
+				 and SUPPLYORDERID = #{supplyorderid}
+			</if>
+			<if test="createuserid != null and createuserid != ''">
+				 and CREATEUSERID = #{createuserid}
+			</if>
+			<if test="createtime != null and createtime != ''">
+				 and CREATETIME = #{createtime}
+			</if>
+			<if test="modifyuserid != null and modifyuserid != ''">
+				 and MODIFYUSERID = #{modifyuserid}
+			</if>
+			<if test="modifytime != null and modifytime != ''">
+				 and MODIFYTIME = #{modifytime}
+			</if>
+			<if test="guaranteespan != null and guaranteespan != ''">
+				 and GUARANTEESPAN = #{guaranteespan}
+			</if>
+			<if test="postionofuend != null and postionofuend != ''">
+				 and POSTIONOFUEND = #{postionofuend}
+			</if>
+			<if test="isdelete != null and isdelete != ''">
+				 and ISDELETE = #{isdelete}
+			</if>
+			<if test="devicefor != null and devicefor != ''">
+				 and DEVICEFOR = #{devicefor}
+			</if>
+			<if test="cloudid != null and cloudid != ''">
+				 and CLOUDID = #{cloudid}
+			</if>
+			<if test="typeof3d != null and typeof3d != ''">
+				 and TYPEOF3D = #{typeof3d}
+			</if>
+			<if test="manageusername != null and manageusername != ''">
+				 and MANAGEUSERNAME = #{manageusername}
+			</if>
+			<if test="managepassword != null and managepassword != ''">
+				 and MANAGEPASSWORD = #{managepassword}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 扩展方法 结束 -->
+</mapper>
