@@ -13,11 +13,13 @@ while True:
 pointLine = ",".join(LINE.split());
 atLine = ",".join(["@%s" % s for s in LINE.split()]);
 # if
-whereList = "\n".join([ 'if (!string.IsNullOrEmpty(%s))\n{\n\tsqlStr += " and %s like :%s ";\n\tparam.Add(new OracleParameter(":%s", "%%" + %s + "%%"));\n}' % (s,s,s,s,s) for s in LINE.split()]);
+whereList = "\n".join([ 'if (!string.IsNullOrEmpty(%s))\n{\n\tsqlStr += " and %s like @%s ";\n\tparam.Add(new OracleParameter(":%s", "%%" + %s + "%%"));\n}' % (s,s,s,s,s) for s in LINE.split()]);
+whereList2 = "\n".join([ 'if (!string.IsNullOrEmpty(%s))\n{\n\tstrSql.Append(" and %s like @%s ");\n\tParameters.Add("@%s", "%%" + %s + "%%");\n}' % (s,s,s,s,s) for s in LINE.split()]);
 # OracleParameter
-paramLine = ";\n".join(['param.Add(new OracleParameter(":%s", XXXXX.%s))' % (s,s) for s in LINE.split()]);
+#paramLine = ";\n".join(['param.Add(new OracleParameter("%s", XXXXX.%s))' % (s,s) for s in LINE.split()]);
+paramLine = ";\n".join(['Parameters.Add("%s", model.%s)' % (s,s) for s in LINE.split()]);
 # update
-updateLine = ",".join([' %s=:%s' % (s,s) for s in LINE.split()]);
+updateLine = ",".join([' %s=@%s' % (s,s) for s in LINE.split()]);
 f.close();
 
 # 
@@ -39,6 +41,8 @@ f.write("\n");
 f.write(paramLine);
 f.write("\n");
 f.write(whereList);
+f.write("\n");
+f.write(whereList2);
 f.close();
 
 

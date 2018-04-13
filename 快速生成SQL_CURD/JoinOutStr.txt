@@ -1,110 +1,80 @@
-string sysname = GetParaValue(dic, "Sysname");
-if (string.IsNullOrEmpty(sysname))
+string col_ID = GetParaValue(dic, "Col_ID");
+if (string.IsNullOrEmpty(col_ID))
 {
-	return DecryptReturnObj("-1", "", "参数 申请系统名称(Sysname) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 主键(Col_ID) 为必填项");
 }
-string linkname = GetParaValue(dic, "Linkname");
-if (string.IsNullOrEmpty(linkname))
+string col_DemoID = GetParaValue(dic, "Col_DemoID");
+if (string.IsNullOrEmpty(col_DemoID))
 {
-	return DecryptReturnObj("-1", "", "参数 联系人(Linkname) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 拆迁点ID(Col_DemoID) 为必填项");
 }
-string linkcompany = GetParaValue(dic, "Linkcompany");
-if (string.IsNullOrEmpty(linkcompany))
+string col_Area = GetParaValue(dic, "Col_Area");
+if (string.IsNullOrEmpty(col_Area))
 {
-	return DecryptReturnObj("-1", "", "参数 联系人单位(Linkcompany) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 面积(Col_Area) 为必填项");
 }
-string linkdepart = GetParaValue(dic, "Linkdepart");
-if (string.IsNullOrEmpty(linkdepart))
+string col_Households = GetParaValue(dic, "Col_Households");
+if (string.IsNullOrEmpty(col_Households))
 {
-	return DecryptReturnObj("-1", "", "参数 联系人部门(Linkdepart) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 户数(Col_Households) 为必填项");
 }
-string linkjob = GetParaValue(dic, "Linkjob");
-if (string.IsNullOrEmpty(linkjob))
+string col_reportDate = GetParaValue(dic, "Col_reportDate");
+if (string.IsNullOrEmpty(col_reportDate))
 {
-	return DecryptReturnObj("-1", "", "参数 联系人职务(Linkjob) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 上报时间(Col_reportDate) 为必填项");
 }
-string linktel = GetParaValue(dic, "Linktel");
-if (string.IsNullOrEmpty(linktel))
+string col_year = GetParaValue(dic, "Col_year");
+if (string.IsNullOrEmpty(col_year))
 {
-	return DecryptReturnObj("-1", "", "参数 联系人电话(Linktel) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 年(Col_year) 为必填项");
 }
-string linkemail = GetParaValue(dic, "Linkemail");
-if (string.IsNullOrEmpty(linkemail))
+string col_month = GetParaValue(dic, "Col_month");
+if (string.IsNullOrEmpty(col_month))
 {
-	return DecryptReturnObj("-1", "", "参数 联系人邮箱(Linkemail) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 月(Col_month) 为必填项");
 }
-string inchargename = GetParaValue(dic, "Inchargename");
-if (string.IsNullOrEmpty(inchargename))
+string col_CreateDate = GetParaValue(dic, "Col_CreateDate");
+if (string.IsNullOrEmpty(col_CreateDate))
 {
-	return DecryptReturnObj("-1", "", "参数 负责人(Inchargename) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 创建时间(Col_CreateDate) 为必填项");
 }
-string inchargedepart = GetParaValue(dic, "Inchargedepart");
-if (string.IsNullOrEmpty(inchargedepart))
+string col_CreateUserId = GetParaValue(dic, "Col_CreateUserId");
+if (string.IsNullOrEmpty(col_CreateUserId))
 {
-	return DecryptReturnObj("-1", "", "参数 负责人部门(Inchargedepart) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 创建人(Col_CreateUserId) 为必填项");
 }
-string inchargejob = GetParaValue(dic, "Inchargejob");
-if (string.IsNullOrEmpty(inchargejob))
+string col_UpdateDate = GetParaValue(dic, "Col_UpdateDate");
+if (string.IsNullOrEmpty(col_UpdateDate))
 {
-	return DecryptReturnObj("-1", "", "参数 负责人职务(Inchargejob) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 更新时间(Col_UpdateDate) 为必填项");
 }
-string inchargetel = GetParaValue(dic, "Inchargetel");
-if (string.IsNullOrEmpty(inchargetel))
+string col_UpdateUserId = GetParaValue(dic, "Col_UpdateUserId");
+if (string.IsNullOrEmpty(col_UpdateUserId))
 {
-	return DecryptReturnObj("-1", "", "参数 负责人电话(Inchargetel) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 更新人(Col_UpdateUserId) 为必填项");
 }
-string inchargeemail = GetParaValue(dic, "Inchargeemail");
-if (string.IsNullOrEmpty(inchargeemail))
+string col_DeleteDate = GetParaValue(dic, "Col_DeleteDate");
+if (string.IsNullOrEmpty(col_DeleteDate))
 {
-	return DecryptReturnObj("-1", "", "参数 负责人邮箱(Inchargeemail) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 删除事件(Col_DeleteDate) 为必填项");
 }
-string situationdescribe = GetParaValue(dic, "Situationdescribe");
-if (string.IsNullOrEmpty(situationdescribe))
+string col_DeleteUserId = GetParaValue(dic, "Col_DeleteUserId");
+if (string.IsNullOrEmpty(col_DeleteUserId))
 {
-	return DecryptReturnObj("-1", "", "参数 情况说明(Situationdescribe) 为必填项");
-}
-string cabinetspace = GetParaValue(dic, "Cabinetspace");
-if (string.IsNullOrEmpty(cabinetspace))
-{
-	return DecryptReturnObj("-1", "", "参数 机柜空间(Cabinetspace) 为必填项");
-}
-string bandwidth = GetParaValue(dic, "Bandwidth");
-if (string.IsNullOrEmpty(bandwidth))
-{
-	return DecryptReturnObj("-1", "", "参数 政务专网带宽(Bandwidth) 为必填项");
-}
-string publicipnumber = GetParaValue(dic, "Publicipnumber");
-if (string.IsNullOrEmpty(publicipnumber))
-{
-	return DecryptReturnObj("-1", "", "参数 公网带IP数(Publicipnumber) 为必填项");
-}
-string applyUserId = GetParaValue(dic, "ApplyUserId");
-if (string.IsNullOrEmpty(applyUserId))
-{
-	return DecryptReturnObj("-1", "", "参数 申请用户ID(ApplyUserId) 为必填项");
-}
-string applyUserDeparId = GetParaValue(dic, "ApplyUserDeparId");
-if (string.IsNullOrEmpty(applyUserDeparId))
-{
-	return DecryptReturnObj("-1", "", "参数 申请用户部门ID(ApplyUserDeparId) 为必填项");
+	return DecryptReturnObj("-1", "", "参数 删除人(Col_DeleteUserId) 为必填项");
 }
 var entity = new XXXXXX();
-entity.Sysname = GetParaValue(dic, "Sysname"); //申请系统名称
-entity.Linkname = GetParaValue(dic, "Linkname"); //联系人
-entity.Linkcompany = GetParaValue(dic, "Linkcompany"); //联系人单位
-entity.Linkdepart = GetParaValue(dic, "Linkdepart"); //联系人部门
-entity.Linkjob = GetParaValue(dic, "Linkjob"); //联系人职务
-entity.Linktel = GetParaValue(dic, "Linktel"); //联系人电话
-entity.Linkemail = GetParaValue(dic, "Linkemail"); //联系人邮箱
-entity.Inchargename = GetParaValue(dic, "Inchargename"); //负责人
-entity.Inchargedepart = GetParaValue(dic, "Inchargedepart"); //负责人部门
-entity.Inchargejob = GetParaValue(dic, "Inchargejob"); //负责人职务
-entity.Inchargetel = GetParaValue(dic, "Inchargetel"); //负责人电话
-entity.Inchargeemail = GetParaValue(dic, "Inchargeemail"); //负责人邮箱
-entity.Situationdescribe = GetParaValue(dic, "Situationdescribe"); //情况说明
-entity.Cabinetspace = GetParaValue(dic, "Cabinetspace"); //机柜空间
-entity.Bandwidth = GetParaValue(dic, "Bandwidth"); //政务专网带宽
-entity.Publicipnumber = GetParaValue(dic, "Publicipnumber"); //公网带IP数
-entity.ApplyUserId = GetParaValue(dic, "ApplyUserId"); //申请用户ID
-entity.ApplyUserDeparId = GetParaValue(dic, "ApplyUserDeparId"); //申请用户部门ID
+entity.Col_ID = GetParaValue(dic, "Col_ID"); //主键
+entity.Col_DemoID = GetParaValue(dic, "Col_DemoID"); //拆迁点ID
+entity.Col_Area = GetParaValue(dic, "Col_Area"); //面积
+entity.Col_Households = GetParaValue(dic, "Col_Households"); //户数
+entity.Col_reportDate = GetParaValue(dic, "Col_reportDate"); //上报时间
+entity.Col_year = GetParaValue(dic, "Col_year"); //年
+entity.Col_month = GetParaValue(dic, "Col_month"); //月
+entity.Col_CreateDate = GetParaValue(dic, "Col_CreateDate"); //创建时间
+entity.Col_CreateUserId = GetParaValue(dic, "Col_CreateUserId"); //创建人
+entity.Col_UpdateDate = GetParaValue(dic, "Col_UpdateDate"); //更新时间
+entity.Col_UpdateUserId = GetParaValue(dic, "Col_UpdateUserId"); //更新人
+entity.Col_DeleteDate = GetParaValue(dic, "Col_DeleteDate"); //删除事件
+entity.Col_DeleteUserId = GetParaValue(dic, "Col_DeleteUserId"); //删除人
 
