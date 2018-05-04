@@ -14,10 +14,8 @@ def WriteFileInfo(fileName,Content):
 	f.write(Content)
 	f.close();
 
-filename = 'ds'	
-	
-def BuildHtmlTable():
-	ds = GetFileInfo(filename+".txt")
+def BuildHtmlTable(filename):
+	ds = GetFileInfo(filename)
 	htmlTable = " <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /><table border=\"1\">";
 	for d in ds:
 		if d.strip() != "":
@@ -56,4 +54,20 @@ def BuildHtmlTable():
 	htmlTable += "</table>";
 	WriteFileInfo(filename+".html",htmlTable)
 	
-BuildHtmlTable()
+#BuildHtmlTable()
+
+	
+lines = []
+words = input("请将TXT文件拖入控制台内,以回车分割文件(单独输入':w')开始执行:\n")
+
+while words != ':w':
+	line = lines.append(words)
+	words = input()		
+
+for line in lines:
+	print("开始处理 "+ line)
+	BuildHtmlTable(line)	
+	print("完成")
+print("全部完成")
+
+

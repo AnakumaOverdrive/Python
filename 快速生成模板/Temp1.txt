@@ -1,0 +1,364 @@
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('PartsId','配件id')
+GO
+
+//生成伪代码示例
+private String _PartsId;
+/// <summary>
+/// 配件id
+/// </summary>
+public String PartsId {
+	get { return _PartsId; }
+	set { value = '配件id'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('PartsNo','配件资产编号')
+GO
+
+//生成伪代码示例
+private String _PartsNo;
+/// <summary>
+/// 配件资产编号
+/// </summary>
+public String PartsNo {
+	get { return _PartsNo; }
+	set { value = '配件资产编号'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('PartsKind','配件类型')
+GO
+
+//生成伪代码示例
+private String _PartsKind;
+/// <summary>
+/// 配件类型
+/// </summary>
+public String PartsKind {
+	get { return _PartsKind; }
+	set { value = '配件类型'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('PartsName','配件名称')
+GO
+
+//生成伪代码示例
+private String _PartsName;
+/// <summary>
+/// 配件名称
+/// </summary>
+public String PartsName {
+	get { return _PartsName; }
+	set { value = '配件名称'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('Brand','品牌')
+GO
+
+//生成伪代码示例
+private String _Brand;
+/// <summary>
+/// 品牌
+/// </summary>
+public String Brand {
+	get { return _Brand; }
+	set { value = '品牌'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('ModuleAndType','型号')
+GO
+
+//生成伪代码示例
+private String _ModuleAndType;
+/// <summary>
+/// 型号
+/// </summary>
+public String ModuleAndType {
+	get { return _ModuleAndType; }
+	set { value = '型号'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('PlaceOfOrigin','产地')
+GO
+
+//生成伪代码示例
+private String _PlaceOfOrigin;
+/// <summary>
+/// 产地
+/// </summary>
+public String PlaceOfOrigin {
+	get { return _PlaceOfOrigin; }
+	set { value = '产地'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('Manufacturer','厂商')
+GO
+
+//生成伪代码示例
+private String _Manufacturer;
+/// <summary>
+/// 厂商
+/// </summary>
+public String Manufacturer {
+	get { return _Manufacturer; }
+	set { value = '厂商'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('QRCode','二维码内容')
+GO
+
+//生成伪代码示例
+private String _QRCode;
+/// <summary>
+/// 二维码内容
+/// </summary>
+public String QRCode {
+	get { return _QRCode; }
+	set { value = '二维码内容'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('TechnicalParameters','技术参数')
+GO
+
+//生成伪代码示例
+private String _TechnicalParameters;
+/// <summary>
+/// 技术参数
+/// </summary>
+public String TechnicalParameters {
+	get { return _TechnicalParameters; }
+	set { value = '技术参数'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('State','配件状态')
+GO
+
+//生成伪代码示例
+private String _State;
+/// <summary>
+/// 配件状态
+/// </summary>
+public String State {
+	get { return _State; }
+	set { value = '配件状态'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('HealthState','健康状态')
+GO
+
+//生成伪代码示例
+private String _HealthState;
+/// <summary>
+/// 健康状态
+/// </summary>
+public String HealthState {
+	get { return _HealthState; }
+	set { value = '健康状态'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('GuaranteeTo','质保期至')
+GO
+
+//生成伪代码示例
+private String _GuaranteeTo;
+/// <summary>
+/// 质保期至
+/// </summary>
+public String GuaranteeTo {
+	get { return _GuaranteeTo; }
+	set { value = '质保期至'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('HardwareId','所属硬件id')
+GO
+
+//生成伪代码示例
+private String _HardwareId;
+/// <summary>
+/// 所属硬件id
+/// </summary>
+public String HardwareId {
+	get { return _HardwareId; }
+	set { value = '所属硬件id'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('PostionInHardware','硬件内位置')
+GO
+
+//生成伪代码示例
+private String _PostionInHardware;
+/// <summary>
+/// 硬件内位置
+/// </summary>
+public String PostionInHardware {
+	get { return _PostionInHardware; }
+	set { value = '硬件内位置'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('IsHardwareContains','是否硬件自带')
+GO
+
+//生成伪代码示例
+private String _IsHardwareContains;
+/// <summary>
+/// 是否硬件自带
+/// </summary>
+public String IsHardwareContains {
+	get { return _IsHardwareContains; }
+	set { value = '是否硬件自带'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('ProcurementContractId','所属采购合同id')
+GO
+
+//生成伪代码示例
+private String _ProcurementContractId;
+/// <summary>
+/// 所属采购合同id
+/// </summary>
+public String ProcurementContractId {
+	get { return _ProcurementContractId; }
+	set { value = '所属采购合同id'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('SupplyOrderId','所属供货单id')
+GO
+
+//生成伪代码示例
+private String _SupplyOrderId;
+/// <summary>
+/// 所属供货单id
+/// </summary>
+public String SupplyOrderId {
+	get { return _SupplyOrderId; }
+	set { value = '所属供货单id'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('CreateUserId','创建人id')
+GO
+
+//生成伪代码示例
+private String _CreateUserId;
+/// <summary>
+/// 创建人id
+/// </summary>
+public String CreateUserId {
+	get { return _CreateUserId; }
+	set { value = '创建人id'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('CreateTime','创建时间')
+GO
+
+//生成伪代码示例
+private String _CreateTime;
+/// <summary>
+/// 创建时间
+/// </summary>
+public String CreateTime {
+	get { return _CreateTime; }
+	set { value = '创建时间'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('ModifyUserId','修改人id')
+GO
+
+//生成伪代码示例
+private String _ModifyUserId;
+/// <summary>
+/// 修改人id
+/// </summary>
+public String ModifyUserId {
+	get { return _ModifyUserId; }
+	set { value = '修改人id'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('ModifyTime','修改时间')
+GO
+
+//生成伪代码示例
+private String _ModifyTime;
+/// <summary>
+/// 修改时间
+/// </summary>
+public String ModifyTime {
+	get { return _ModifyTime; }
+	set { value = '修改时间'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('GuaranteeSpan','质保时长（年）')
+GO
+
+//生成伪代码示例
+private String _GuaranteeSpan;
+/// <summary>
+/// 质保时长（年）
+/// </summary>
+public String GuaranteeSpan {
+	get { return _GuaranteeSpan; }
+	set { value = '质保时长（年）'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('IsDelete','是否删除（0-否；1-是）')
+GO
+
+//生成伪代码示例
+private String _IsDelete;
+/// <summary>
+/// 是否删除（0-否；1-是）
+/// </summary>
+public String IsDelete {
+	get { return _IsDelete; }
+	set { value = '是否删除（0-否；1-是）'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('StorageRoomId','所属库房id（当资产状态是在库的情况下）')
+GO
+
+//生成伪代码示例
+private String _StorageRoomId;
+/// <summary>
+/// 所属库房id（当资产状态是在库的情况下）
+/// </summary>
+public String StorageRoomId {
+	get { return _StorageRoomId; }
+	set { value = '所属库房id（当资产状态是在库的情况下）'; }
+};
+
+//生成SQL代码示例
+insert TempTabnle(Name,Desc) values('PartitionId','区域分区id')
+GO
+
+//生成伪代码示例
+private String _PartitionId;
+/// <summary>
+/// 区域分区id
+/// </summary>
+public String PartitionId {
+	get { return _PartitionId; }
+	set { value = '区域分区id'; }
+};
+
