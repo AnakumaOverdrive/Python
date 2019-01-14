@@ -1,5 +1,50 @@
-import sys,os,uuid,csv,xlrd
+import sys,os,uuid,csv,xlrd,json
 import datetime
+
+HTMLTMP = """
+ <div id="%s"></div>
+    <script>
+        var data = %s;
+
+        function data2TableStr(data) {
+            var matchLetter = /^[a-z|A-Z]+/gi;
+            var matchNumber = /\d+$/gi;
+            var table = "<table>";
+            for (var i = 0; i < data.length; i++) {
+                var tr = "<tr>";
+                var trData = data[i];
+                for (var j = 0; j < trData.length; j++) {
+                    var span = "";
+                    var content = "";
+                    td = trData[j];
+                    var tdsplit = td.split("|");
+                    for (var k = 0; k < tdsplit.length; k++) {
+                        if (k == 0) {
+                            content = tdsplit[k];
+                        }
+                        if (tdsplit[k].match(matchLetter) == "r") {
+                            span += " rowspan=" + tdsplit[k].match(matchNumber);
+                        }
+                        if (tdsplit[k].match(matchLetter) == "c") {
+                            span += " colspan=" + tdsplit[k].match(matchNumber);
+                        }
+                    }
+                    if (span != "") {
+                        tr += "<td" + span + ">" + content + "</td>";
+                    } else {
+                        tr += "<td>" + content + "</td>";
+                    }
+                }
+                tr += "</tr>";
+                table += tr;
+            }
+            table += "</table>";
+            return table;
+        }
+
+        document.getElementById("%s").innerHTML = data2TableStr(data);
+    </script>
+""";
 
 def IsMergedCell(mergedCells,i,j):
 	"""判断是否为合并单元格的起始行和起始列,如果是则返回合并单元格的数组,
@@ -27,17 +72,7 @@ def WriteFileInfo(fileName,Content):
 	f = open(fileName,"w",encoding="utf-8");
 	f.write(Content)
 	f.close();
-	
-def GetTdClass(i,j):
-	"""根据单元格的行数与列数返回 Td Class 的样式名称
-	class = 'tdclas' 形式"""
-	return ""
-	
-def GetTrClass(i):
-	"""根据单元格的行数与列数返回 Tr Class 的样式名称
-	class = 'trclas' 形式"""
-	return ""
-	
+		
 def HandleCellValue(sheet,i,j,worldColNumber = []):
 	"""单元格值的处理"""
 	cell = sheet.cell(i,j)
@@ -104,48 +139,35 @@ def HandleExcel(filename):
 	#获得含有%的列
 	worldColNumber = FindColByField(sheet,'%')
 	
-	htmlTable = " <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />";
-	#htmlTable = "";
-	htmlTable += " <table style=\"width:98%\">";
-	htmlTable += "<thead>"
+	TableJson = [];
+	
 	for i in range(nrows):
 		tr = sheet.row_values(i) #获得行的所有数据
-		trClass = GetTrClass(i)	#获得行的样式
-		
-		if trClass != None:
-			htmlTable += "<tr %s>" % GetTrClass(i);
-		else:
-			htmlTable += "<tr>";
+		trJson = [];
 		for j in range(ncols):
-			tdClass = GetTdClass(i,j) #获得列的样式
 			spanStr = "";
 			#判断是否为合并单元格的起始行和起始列 如果是返回行的跨度和列的跨度 否则返回None
 			mc =  IsMergedCell(mergedCells, i,j) 
 			if mc != None:
 				content = HandleCellValue(sheet,i,j,worldColNumber)
-				if mc[0] != 1: spanStr += 'rowspan="%s"' % mc[0]
-				if mc[1] != 1: spanStr += 'colspan ="%s"' % mc[1]
-				htmlTable += "<td %s %s>%s</td>" % (tdClass,spanStr,content)
+				if mc[0] != 1: spanStr += '|r%s' % mc[0]
+				if mc[1] != 1: spanStr += '|c%s' % mc[1]
+				trJson.append("%s%s" % (content,spanStr))
 				
 			#判断是否存在合并单元格内
 			elif IsInMergedCell(mergedCells, i,j):
-				#htmlTable += "<td style='display:none'></td>" 
+				#JsonStr += "<td style='display:none'></td>" 
 				continue
 			else:
 				content = HandleCellValue(sheet,i,j,worldColNumber)
-				htmlTable += "<td %s>%s</td>" % (tdClass,content)
-		htmlTable += "</tr>";
-
-		if i == 0:
-			htmlTable = htmlTable.replace('td','th')
-			htmlTable += "</thead>"
-			htmlTable += "<tbody>"
-			
-		if i == (nrows - 1):
-			htmlTable += "</tbody>"
+				trJson.append("%s" % (content))
+		TableJson.append(trJson);
 		
-	htmlTable += "</table>";
-	WriteFileInfo(filename+".html",htmlTable)
+	TableStr = json.dumps(TableJson)
+	(filepath,tempfilename) = os.path.split(filename);
+	(shotname,extension) = os.path.splitext(tempfilename);
+	TempStr = HTMLTMP % (shotname,TableStr,shotname)
+	WriteFileInfo(filename+".html",TempStr)
 
 #EXCELNAME = "红桥区.xlsx"
 #HandleExcel(EXCELNAME)	
