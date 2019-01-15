@@ -1,0 +1,1 @@
+scrapy crawl cl -o info.csv
